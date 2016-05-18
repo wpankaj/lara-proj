@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\Http\Requests;
 
 class PagesController extends Controller
@@ -12,7 +12,7 @@ class PagesController extends Controller
     
     public function index()
     {
-        $people = range("b", "s");
-        return view('pages.index', compact('people'));
+        $pages = DB::table('pages')->get();
+        return view('pages.index', compact('pages'));
     }
 }
