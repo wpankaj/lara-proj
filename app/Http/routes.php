@@ -17,8 +17,10 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'PagesController@index');
+Route::get('/pages/{page}', 'PagesController@showSingle');
 
-Route::get('about', function () {
-    return view('pages.about');
-    //return ' hello';// works
-});
+//
+//Route::get('about', function () {
+//    return view('pages.about');
+//    //return ' hello';// works
+//});
